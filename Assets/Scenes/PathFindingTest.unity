@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa463c5a29a3ca499b57527cabb73df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nodeArrayFinished: []
-  _debug: 1
+  _debug: 0
+  _countdownMax: 10
+  _totalPathsMax: 10
 --- !u!1 &9725489
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1943646680}
   - {fileID: 923317748}
   playerHere: 0
@@ -490,6 +491,22 @@ Transform:
   m_Father: {fileID: 9725490}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &778989707 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 64543d31afabfdc4c8ff4227a5d6c001, type: 3}
+  m_PrefabInternal: {fileID: 1061664713}
+--- !u!114 &778989710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778989707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52412ef8f8f9caa498859c37a3025c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debug: 0
 --- !u!1 &804882219
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1894120167}
   - {fileID: 1943646680}
   playerHere: 0
@@ -704,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1565183175}
   playerHere: 0
 --- !u!23 &839554856
@@ -887,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 36292519}
   - {fileID: 2030649590}
   playerHere: 0
@@ -1301,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 2030649590}
   - {fileID: 1565183175}
   playerHere: 0
@@ -1401,7 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1491843584}
   - {fileID: 839554854}
   playerHere: 0
@@ -1669,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1894120167}
   playerHere: 1
 --- !u!23 &1676752795
@@ -1848,7 +1865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 1676752793}
   - {fileID: 804882219}
   playerHere: 0
@@ -2032,7 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 804882219}
   - {fileID: 36292519}
   playerHere: 0
@@ -2132,7 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6702695f141943ac11fcdbd745fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
+  nodeConnectionsArray:
   - {fileID: 923317748}
   - {fileID: 1491843584}
   playerHere: 0

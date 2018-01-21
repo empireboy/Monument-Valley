@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
 public class NodeInitialize : MonoBehaviour {
-    public GameObject[] nodes;
+    public GameObject[] nodeConnectionsArray;
     public bool playerHere = false;
 }
