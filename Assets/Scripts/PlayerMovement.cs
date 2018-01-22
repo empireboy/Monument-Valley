@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Move()
     {
-
+        
     }
 
     private void GetDirection()
