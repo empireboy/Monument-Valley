@@ -5,4 +5,5 @@ public class NodeInitialize : MonoBehaviour {
     public bool playerHere = false;
     public bool isChecked = false;
     public int pathStartIndex = -1;
+    public int pathConnectedIndex = -1;
 }

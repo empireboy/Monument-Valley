@@ -75,7 +75,7 @@ public class PathController : MonoBehaviour {
             _pathsCheckFinished = true;
             _isAnalyzing = false;
         }
-        else
+        else if (!_pathsCheckFinished)
         // Iterate trough all paths again
         {
             PathAnalyzing(playerPos, endObject);
@@ -116,6 +116,7 @@ public class PathController : MonoBehaviour {
                         if (_debug) Debug.Log("New path created on a node: " + currentNode);
                         _nodeArrayFinished.Add(new List<GameObject>());         // Create new path
                         currentNodeInit.pathStartIndex = _nodeArrayFinished.Count-1;      // Give the current path index to the current node
+                        currentNodeInit.pathConnectedIndex = index;
                         if (_debug) Debug.Log("Given the node: " + currentNode + " a pathStartIndex: " + currentNodeInit.pathStartIndex);
                     }
                     _totalPathsCountdown--;
@@ -141,8 +142,9 @@ public class PathController : MonoBehaviour {
             {
                 if (_debug) Debug.Log("Path finding succes for index: " + index);
                 _pathCheckFinished = true;
+                _pathsCheckFinished = true;
                 _pathSuccesIndexArray.Add(index);       // Add the index of the current array to an array that keeps track of all paths that succeed
-                //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().PathCreate(_nodeArrayFinished);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().PathCreate(_nodeArrayFinished[_pathSuccesIndexArray[0]]);
             }
 
             _pathCountdown--;
@@ -193,4 +195,17 @@ public class PathController : MonoBehaviour {
 
         return null;
     }
+
+    /*private GameObject GetPathConnectedIndex(int index)
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Path");
+
+        for (int i = 0; i < objectsWithTag.Length; i++)
+        {
+            NodeInitialize currentNodeInit = objectsWithTag[i].GetComponent<NodeInitialize>();
+            if (currentNodeInit.pathStartIndex == index) return objectsWithTag[i];
+        }
+
+        return null;
+    }*/
 }
