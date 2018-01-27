@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa463c5a29a3ca499b57527cabb73df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debug: 1
+  _debug: 0
   _countdownMax: 50
   _totalPathsMax: 50
 --- !u!1 &9725489
@@ -307,6 +307,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &36292521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -759,6 +760,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &250728911
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -861,6 +863,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &317246493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1180,6 +1183,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &707775943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1283,6 +1287,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &729017371
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1351,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52412ef8f8f9caa498859c37a3025c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debug: 0
+  _debug: 1
 --- !u!1 &804882219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1394,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &804882221
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1575,6 +1581,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &839554856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1762,6 +1769,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &923317750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1878,6 +1886,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &967183455
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2065,6 +2074,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1040683716
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2481,6 +2491,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1490355294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2571,6 +2582,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1491843586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2758,6 +2770,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1565183177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3031,6 +3044,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1676752795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3237,6 +3251,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1860765205
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3411,6 +3426,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1894120169
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3598,6 +3614,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1943646682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3714,6 +3731,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &1949758006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3888,6 +3906,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &2030649592
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4004,6 +4023,7 @@ MonoBehaviour:
   isChecked: 0
   pathStartIndex: -1
   pathConnectedIndex: -1
+  pathConnectedObject: {fileID: 0}
 --- !u!23 &2043836376
 MeshRenderer:
   m_ObjectHideFlags: 0

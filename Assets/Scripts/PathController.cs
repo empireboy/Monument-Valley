@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PathController : MonoBehaviour {
     private GameObject _nextNode;
-    //private List<GameObject> _nodeArrayFinished = new List<GameObject>();
+    private GameObject _hit;
     private List<List<GameObject>> _nodeArrayFinished = new List<List<GameObject>>();
     private List<int> _pathSuccesIndexArray = new List<int>();
+    private List<int> _pathFailedIndexArray = new List<int>();
     private bool _pathCheckFinished = false;
     private bool _pathsCheckFinished = false;
     private bool _isAnalyzing = false;
@@ -23,6 +24,7 @@ public class PathController : MonoBehaviour {
         if (Input.GetMouseButtonDown(1))
         {
             GameObject hit = RaycastManager.GetRaycastHit();
+            _hit = hit;
             if (PathCanStart(hit)) PathInitialize(hit);         // Initialize variables for path analyzing
         }
     }
@@ -85,6 +87,7 @@ public class PathController : MonoBehaviour {
     private void GetPath(Vector3 playerPos, GameObject endObject, int index)
     {
         if (IsSucceeded(index)) { PathReset(); return; }        // Return if this path already succeeded to find a player
+        if (IsFailed(index)) { PathReset(); return; }        // Return if this path already succeeded to find a player
 
         // Get the path start index if exists
         GameObject checkObject = GetPathStartIndex(index);
@@ -97,12 +100,19 @@ public class PathController : MonoBehaviour {
         while (!_pathCheckFinished)
         {
             GameObject[] nodeConnectionsArray = checkObject.GetComponent<NodeInitialize>().nodeConnectionsArray;
+            int nodeConnectionsArrayLength = nodeConnectionsArray.Length;
+            int nodeConnectionsArrayCheckedNumber = 0;
+            if (_debug) Debug.Log("The number of nodes to check: " + nodeConnectionsArray.Length);
 
             // Get the next node and create a new path if needed
-            for (int i = 0; i < nodeConnectionsArray.Length; i++)
+            for (int i = 0; i < nodeConnectionsArrayLength; i++)
             {
                 GameObject currentNode = nodeConnectionsArray[i];
                 NodeInitialize currentNodeInit = currentNode.GetComponent<NodeInitialize>();
+                if (_debug) Debug.Log("The current node to check: " + currentNode);
+
+                // Keep track of the nodes that are checked already
+                if (currentNodeInit.isChecked) nodeConnectionsArrayCheckedNumber++;
 
                 if (_nextNode == null && !currentNodeInit.isChecked)
                 {
@@ -117,9 +127,19 @@ public class PathController : MonoBehaviour {
                         _nodeArrayFinished.Add(new List<GameObject>());         // Create new path
                         currentNodeInit.pathStartIndex = _nodeArrayFinished.Count-1;      // Give the current path index to the current node
                         currentNodeInit.pathConnectedIndex = index;
+                        currentNodeInit.pathConnectedObject = _nodeArrayFinished[index][_nodeArrayFinished[index].Count-1];
                         if (_debug) Debug.Log("Given the node: " + currentNode + " a pathStartIndex: " + currentNodeInit.pathStartIndex);
+                        if (_debug) Debug.Log("Given the node: " + currentNode + " a pathConnectedIndex: " + currentNodeInit.pathConnectedIndex);
+                        if (_debug) Debug.Log("Given the node: " + currentNode + " a pathConnectedObject: " + currentNodeInit.pathConnectedObject);
                     }
                     _totalPathsCountdown--;
+                }
+                else if (currentNodeInit.isChecked && i == nodeConnectionsArrayLength - 1 && nodeConnectionsArrayCheckedNumber == nodeConnectionsArrayLength)
+                {
+                    if (_debug) Debug.Log("Path finding failed for index: " + index);
+                    _pathFailedIndexArray.Add(index);       // Add the index of the current array to an array that keeps track of all paths that failed
+                    PathReset();
+                    return;
                 }
             }
             
@@ -144,6 +164,53 @@ public class PathController : MonoBehaviour {
                 _pathCheckFinished = true;
                 _pathsCheckFinished = true;
                 _pathSuccesIndexArray.Add(index);       // Add the index of the current array to an array that keeps track of all paths that succeed
+
+                int currentNodePathConnectedIndex = _nodeArrayFinished[_pathSuccesIndexArray[0]][0].GetComponent<NodeInitialize>().pathConnectedIndex;
+                if (_debug) Debug.Log("Current node connected index: " + currentNodePathConnectedIndex);
+                if (currentNodePathConnectedIndex != -1)
+                {
+                    //int currentNode = _nodeArrayFinished[_pathSuccesIndexArray[0]][0].GetComponent<NodeInitialize>().pathStartIndex;
+                    GameObject pathConnectedObject = _nodeArrayFinished[_pathSuccesIndexArray[0]][0].GetComponent<NodeInitialize>().pathConnectedObject;
+                    bool pathConnectedObjectChecked = false;
+
+                    List<GameObject> pathRemovedArray = new List<GameObject>();
+                    for (int i = 0; i < _nodeArrayFinished[_pathSuccesIndexArray[0]].Count; i++)
+                    {
+                        pathRemovedArray.Add(_nodeArrayFinished[_pathSuccesIndexArray[0]][i]);
+                        if (_debug) Debug.Log("Add a node to the path removed array: " + _nodeArrayFinished[_pathSuccesIndexArray[0]][i]);
+                    }
+
+                    _nodeArrayFinished[_pathSuccesIndexArray[0]].Clear();
+
+                    for (int i = 0; i < _nodeArrayFinished[currentNodePathConnectedIndex].Count - 1; i++)
+                    {
+                        // Check for the raycast hit object
+                        {
+                            if (_nodeArrayFinished[currentNodePathConnectedIndex][i] == _hit)
+                                pathConnectedObjectChecked = true;
+                        }
+
+                        if (pathConnectedObjectChecked)
+                        // Add the connected path to the finished node array
+                        {
+                            _nodeArrayFinished[_pathSuccesIndexArray[0]].Add(_nodeArrayFinished[currentNodePathConnectedIndex][i]);
+                            if (_debug) Debug.Log("Added a connected node: " + _nodeArrayFinished[currentNodePathConnectedIndex][i]);
+                        }
+
+                        // Check for the path connected object
+                        {
+                            if (_nodeArrayFinished[currentNodePathConnectedIndex][i] == pathConnectedObject)
+                                pathConnectedObjectChecked = false;
+                        }
+                    }
+
+                    for (int i = 0; i < pathRemovedArray.Count; i++)
+                    {
+                        _nodeArrayFinished[_pathSuccesIndexArray[0]].Add(pathRemovedArray[i]);
+                        if (_debug) Debug.Log("Added a node from the path removed array back into the finished node array: " + pathRemovedArray[i]);
+                    }
+                }
+                // Give the path array to the player
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().PathCreate(_nodeArrayFinished[_pathSuccesIndexArray[0]]);
             }
 
@@ -177,6 +244,19 @@ public class PathController : MonoBehaviour {
         return false;
     }
 
+    private bool IsFailed(int index)
+    {
+        for (int i = 0; i < _pathFailedIndexArray.Count; i++)
+        {
+            if (_pathFailedIndexArray[i] == index)
+            {
+                if (_debug) Debug.Log("The current path with index: " + index + " failed to find a player");
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void PathReset()
     {
         _pathCountdown = _countdownMax;
@@ -195,17 +275,4 @@ public class PathController : MonoBehaviour {
 
         return null;
     }
-
-    /*private GameObject GetPathConnectedIndex(int index)
-    {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Path");
-
-        for (int i = 0; i < objectsWithTag.Length; i++)
-        {
-            NodeInitialize currentNodeInit = objectsWithTag[i].GetComponent<NodeInitialize>();
-            if (currentNodeInit.pathStartIndex == index) return objectsWithTag[i];
-        }
-
-        return null;
-    }*/
 }
