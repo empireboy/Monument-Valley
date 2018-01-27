@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Microsoft;
 
 public class HorizontalBlockMovement : MonoBehaviour {
+
 
     public float speed;
     public float maxSpeed = 50;
@@ -32,11 +34,7 @@ public class HorizontalBlockMovement : MonoBehaviour {
             Debug.Log(RaycastManager.GetRaycastHit());
             if (RaycastManager.GetRaycastHit() == gameObject)
             {
-                //float delta = Input.mousePosition.x - lastPos.x;
-                //OnMouseDown();
                 OnMouseDrag();
-                //lastPos = Input.mousePosition;
-                //speed = delta * Time.deltaTime * 2;
             }      
         }
         if(!Input.GetMouseButton(0))
@@ -49,7 +47,6 @@ public class HorizontalBlockMovement : MonoBehaviour {
         {
             speed = maxSpeed;
         }
-        
     }
     /*
        void OnMouseDown()
