@@ -47,17 +47,18 @@ public class PathController : MonoBehaviour {
     {
         _nodeArrayFinished.Add(new List<GameObject>());         // Create the first empty path
 
+        ResetAllNodeInit();
+
+        _pathsCheckFinished = false;
         _isAnalyzing = true;
         _pathCountdown = _countdownMax;
         _pathsCountdown = _countdownMax;
         _totalPathsCountdown = _totalPathsMax;
 
-        Vector3 playerPos = GameObject.FindWithTag("Player").transform.position;
-
-        PathAnalyzing(playerPos, endObject);        // Start path analyzing
+        PathAnalyzing(endObject);        // Start path analyzing
     }
 
-    private void PathAnalyzing(Vector3 playerPos, GameObject endObject)
+    private void PathAnalyzing(GameObject endObject)
     {
         if (_pathsCheckFinished) return;
 
@@ -65,7 +66,7 @@ public class PathController : MonoBehaviour {
         for (int i = 0; i < i_count; i++)
         {
             if (_debug) Debug.Log("Analyzing node with index: " + i);
-            GetPath(playerPos, endObject, i);
+            GetPath(endObject, i);
         }
 
         _pathsCountdown--;
@@ -80,11 +81,11 @@ public class PathController : MonoBehaviour {
         else if (!_pathsCheckFinished)
         // Iterate trough all paths again
         {
-            PathAnalyzing(playerPos, endObject);
+            PathAnalyzing(endObject);
         }
     }
 
-    private void GetPath(Vector3 playerPos, GameObject endObject, int index)
+    private void GetPath(GameObject endObject, int index)
     {
         if (IsSucceeded(index)) { PathReset(); return; }        // Return if this path already succeeded to find a player
         if (IsFailed(index)) { PathReset(); return; }        // Return if this path already succeeded to find a player
@@ -212,6 +213,10 @@ public class PathController : MonoBehaviour {
                 }
                 // Give the path array to the player
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().PathCreate(_nodeArrayFinished[_pathSuccesIndexArray[0]]);
+                _isAnalyzing = false;
+                _nodeArrayFinished.Clear();
+                _pathSuccesIndexArray.Clear();
+                _pathFailedIndexArray.Clear();
             }
 
             _pathCountdown--;
@@ -274,5 +279,19 @@ public class PathController : MonoBehaviour {
         }
 
         return null;
+    }
+
+    private void ResetAllNodeInit()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Path");
+
+        for (int i = 0; i < objectsWithTag.Length; i++)
+        {
+            NodeInitialize currentNodeInit = objectsWithTag[i].GetComponent<NodeInitialize>();
+            currentNodeInit.isChecked = false;
+            currentNodeInit.pathStartIndex = -1;
+            currentNodeInit.pathConnectedIndex = -1;
+            currentNodeInit.pathConnectedObject = null;
+        }
     }
 }
