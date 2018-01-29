@@ -75,8 +75,12 @@ public class PathController : MonoBehaviour {
         if (_pathsCountdown <= 0)
         {
             if (_debug) Debug.Log("Path finiding failed for all paths");
-            _pathsCheckFinished = true;
             _isAnalyzing = false;
+            _nodeArrayFinished.Clear();
+            _pathSuccesIndexArray.Clear();
+            _pathFailedIndexArray.Clear();
+            _pathCheckFinished = true;
+            ResetAllNodeInit();
         }
         else if (!_pathsCheckFinished)
         // Iterate trough all paths again
@@ -217,6 +221,8 @@ public class PathController : MonoBehaviour {
                 _nodeArrayFinished.Clear();
                 _pathSuccesIndexArray.Clear();
                 _pathFailedIndexArray.Clear();
+                _pathsCheckFinished = true;
+                ResetAllNodeInit();
             }
 
             _pathCountdown--;

@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour {
         switch (_directionState)
         {
             case _directionStateEnum.left:
-                transform.Translate(-_speed, 0, 0);
+                transform.position += new Vector3(-_speed, 0, 0);
+                transform.Rotate(new Vector3(0, 1, 0));
                 if (gameObject.transform.position.x <= _path[_currentNodeCounter + 1].transform.position.x)
                 {
                     nextNodeInit();
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour {
                 break;
             case _directionStateEnum.down:
                 transform.Translate(0, 0, -_speed);
-                if (gameObject.transform.position.z >= _path[_currentNodeCounter + 1].transform.position.z)
+                if (gameObject.transform.position.z <= _path[_currentNodeCounter + 1].transform.position.z)
                 {
                     nextNodeInit();
                 }
@@ -105,22 +106,28 @@ public class PlayerMovement : MonoBehaviour {
             node.transform.position.z
         );
 
-        ResetAllNodePlayerHere();
-
-        _path[_currentNodeCounter + 2].GetComponent<NodeInitialize>().playerHere = true;
+        if (_path.Count - 1 >= _currentNodeCounter + 2)
+        {
+            ResetAllNodePlayerHere();
+            _path[_currentNodeCounter + 2].GetComponent<NodeInitialize>().playerHere = true;
+        }
     }
 
     private void nextNodeInit()
     {
+        lockToNode(_path[_currentNodeCounter + 1]);
+
         if (_currentNodeCounter >= _path.Count - 2)
         {
             _moveState = _moveStateEnum.idle;
-            _directionState = _directionStateEnum.noDirection;
             return;
         }
 
-        lockToNode(_path[_currentNodeCounter + 1]);
-        _currentNodeCounter++;
+        if (_path.Count - 1 >= _currentNodeCounter + 2)
+        {
+            _currentNodeCounter++;
+        }
+        if (_debug) Debug.Log("Player current node: " + _path[_currentNodeCounter + 1]);
         _directionState = _directionStateEnum.noDirection;
     }
 
