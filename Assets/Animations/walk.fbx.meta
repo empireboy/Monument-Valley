@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 7487a0e0a6fdfda428f639f102efdc77
+timeCreated: 1517221221
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: arms
+    100002: body
+    100004: eyes
+    100006: Glasses
+    100008: hair
+    100010: head
+    100012: head_2
+    100014: hip
+    100016: IK
+    100018: Joint_2
+    100020: L_Elbow
+    100022: L_foot
+    100024: L_foot_goal
+    100026: L_hand
+    100028: L_hand_Goal
+    100030: L_knee
+    100032: L_Leg
+    100034: L_Leg_Goal
+    100036: L_Leg_Pole
+    100038: L_Shoulder
+    100040: L_Shoulder_Pole
+    100042: L_toe
+    100044: legs
+    100046: R_Elbow
+    100048: R_foot
+    100050: R_foot_goal
+    100052: R_hand
+    100054: R_hand_Goal
+    100056: R_knee
+    100058: R_Leg
+    100060: R_Leg_Goal
+    100062: R_Leg_Pole
+    100064: R_Shoudler
+    100066: R_Shoudler_Pole
+    100068: R_toe
+    100070: root
+    100072: Shoulder_bone
+    100074: skirt
+    100076: //RootNode
+    400000: arms
+    400002: body
+    400004: eyes
+    400006: Glasses
+    400008: hair
+    400010: head
+    400012: head_2
+    400014: hip
+    400016: IK
+    400018: Joint_2
+    400020: L_Elbow
+    400022: L_foot
+    400024: L_foot_goal
+    400026: L_hand
+    400028: L_hand_Goal
+    400030: L_knee
+    400032: L_Leg
+    400034: L_Leg_Goal
+    400036: L_Leg_Pole
+    400038: L_Shoulder
+    400040: L_Shoulder_Pole
+    400042: L_toe
+    400044: legs
+    400046: R_Elbow
+    400048: R_foot
+    400050: R_foot_goal
+    400052: R_hand
+    400054: R_hand_Goal
+    400056: R_knee
+    400058: R_Leg
+    400060: R_Leg_Goal
+    400062: R_Leg_Pole
+    400064: R_Shoudler
+    400066: R_Shoudler_Pole
+    400068: R_toe
+    400070: root
+    400072: Shoulder_bone
+    400074: skirt
+    400076: //RootNode
+    2300000: eyes
+    2300002: Glasses
+    2300004: hair
+    2300006: head_2
+    2300008: skirt
+    3300000: eyes
+    3300002: Glasses
+    3300004: hair
+    3300006: head_2
+    3300008: skirt
+    4300000: arms
+    4300002: body
+    4300004: skirt
+    4300006: hair
+    4300008: eyes
+    4300010: head_2
+    4300012: Glasses
+    4300014: legs
+    7400000: CINEMA_4D_Main
+    9500000: //RootNode
+    13700000: arms
+    13700002: body
+    13700004: legs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: f94ccb7170427974c8963ec36554ea0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: e747fdbb078e1b248ae6b7d84dc3df81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.2
+    second: {fileID: 2100000, guid: 27930d65f619a5840aaf0aa384ed3119, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.3
+    second: {fileID: 2100000, guid: c46e456318e6ae540ba9cb6df771515b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.4
+    second: {fileID: 2100000, guid: 7c56bf10aee25254a8e7f4ef50919cf1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CINEMA_4D_Main
+      takeName: CINEMA_4D_Main
+      firstFrame: 20
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,10 +13,12 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private bool _debug = false;
     [SerializeField] private float _speed;
+    [SerializeField] private float _rotationSpeed;
 
     private void Start()
     {
         _speed = _speed * Time.deltaTime;
+        _rotationSpeed = _rotationSpeed * Time.deltaTime;
     }
 
     private void Update()
@@ -45,28 +47,83 @@ public class PlayerMovement : MonoBehaviour {
         {
             case _directionStateEnum.left:
                 transform.position += new Vector3(-_speed, 0, 0);
-                transform.Rotate(new Vector3(0, 1, 0));
+                // Rotation
+                if (transform.eulerAngles.y < 90)
+                {
+                    transform.Rotate(new Vector3(0, _rotationSpeed, 0));
+                }
+                else if (transform.eulerAngles.y > 90)
+                {
+                    transform.Rotate(new Vector3(0, -_rotationSpeed, 0));
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 90, 0);
+                }
+                // Next node
                 if (gameObject.transform.position.x <= _path[_currentNodeCounter + 1].transform.position.x)
                 {
                     nextNodeInit();
                 }
                 break;
             case _directionStateEnum.right:
-                transform.Translate(_speed, 0, 0);
+                transform.position += new Vector3(_speed, 0, 0);
+                // Rotation
+                if (transform.eulerAngles.y < 270)
+                {
+                    transform.Rotate(new Vector3(0, _rotationSpeed, 0));
+                }
+                else if (transform.eulerAngles.y > 270)
+                {
+                    transform.Rotate(new Vector3(0, -_rotationSpeed, 0));
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 270, 0);
+                }
+                // Next node
                 if (gameObject.transform.position.x >= _path[_currentNodeCounter + 1].transform.position.x)
                 {
                     nextNodeInit();
                 }
                 break;
             case _directionStateEnum.up:
-                transform.Translate(0, 0, _speed);
+                transform.position += new Vector3(0, 0, _speed);
+                // Rotation
+                if (transform.eulerAngles.y < 180)
+                {
+                    transform.Rotate(new Vector3(0, _rotationSpeed, 0));
+                }
+                else if (transform.eulerAngles.y > 180)
+                {
+                    transform.Rotate(new Vector3(0, -_rotationSpeed, 0));
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                // Next node
                 if (gameObject.transform.position.z >= _path[_currentNodeCounter + 1].transform.position.z)
                 {
                     nextNodeInit();
                 }
                 break;
             case _directionStateEnum.down:
-                transform.Translate(0, 0, -_speed);
+                transform.position += new Vector3(0, 0, -_speed);
+                // Rotation
+                if (transform.eulerAngles.y > 0 && transform.eulerAngles.y < 360 - 5)
+                {
+                    transform.Rotate(new Vector3(0, -_rotationSpeed, 0));
+                }
+                else if (transform.eulerAngles.y > 360 + 5)
+                {
+                    transform.Rotate(new Vector3(0, _rotationSpeed, 0));
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                // Next node
                 if (gameObject.transform.position.z <= _path[_currentNodeCounter + 1].transform.position.z)
                 {
                     nextNodeInit();
