@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour
 {
 
-    private bool rotatingClockwise = false;
+     public static bool rotatingClockwise = false;
 
     // Use this for initialization
     void Start()
@@ -39,9 +39,13 @@ public class Rotate : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
+        /*
+
         if (Input.anyKeyDown)
         {
             rotatingClockwise = !rotatingClockwise;
         }
+
+        */
     }
 }
