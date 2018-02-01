@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa463c5a29a3ca499b57527cabb73df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debug: 1
+  _debug: 0
   _countdownMax: 50
   _totalPathsMax: 50
 --- !u!1 &9725489

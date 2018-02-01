@@ -9,19 +9,18 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private bool _debug = false;
 
-    void Update()
-    {
-        Move();
-    }
-
 
     public void PathCreate(List<GameObject> nodeArray)
     {
+        // Get path array
         for (int i = nodeArray.Count; i > 0; i--)
         {
             _path.Add(nodeArray[i-1]);
             if (_debug) Debug.Log("Player node next: " + nodeArray[i - 1]);
         }
+
+        // Start movement
+        Move();
     }
 
     private GameObject GetNodeNext(List<GameObject> path)
@@ -32,8 +31,10 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Move()
     {
-        gameObject.transform.position = GetNodeNext(_path).transform.position;
-
+        for (int i = 0; _path.Count > 0; i++)
+        {
+            gameObject.transform.position = _path[i].transform.position;
+        }
     }
 
     private void GetDirection()
