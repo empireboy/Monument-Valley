@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour {
         switch (_moveState)
         {
             case _moveStateEnum.idle:
-                lockToNode(_path[_currentNodeCounter + 1]);
+                //lockToNode(_path[_currentNodeCounter + 1]);
                 break;
             case _moveStateEnum.walk:
                 if (_directionState == _directionStateEnum.noDirection) GetDirection(_path[_currentNodeCounter], _path[_currentNodeCounter+1]);
