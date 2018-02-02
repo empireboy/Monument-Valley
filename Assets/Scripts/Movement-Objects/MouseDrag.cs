@@ -75,7 +75,9 @@ public class MouseDrag : MonoBehaviour
             {
                 //transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X")) * Time.deltaTime * speed);
 
-                Rotation.Rotate(Vector3.up, -rotX, Space.World);
+                Debug.Log("test");
+
+                transform.Rotate(Vector3.up, -rotX, Space.World);
                 //transform.RotateAround(Vector3.right, rotY);
             }
         }

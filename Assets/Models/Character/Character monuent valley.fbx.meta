@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: 64543d31afabfdc4c8ff4227a5d6c001
+timeCreated: 1516009781
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: arms
+    100002: Background
+    100004: body
+    100006: //RootNode
+    100008: character_1
+    100010: Cylinder
+    100012: Cylinder_2
+    100014: Cylinder_3
+    100016: Cylinder_3_2
+    100018: Cylinder_4
+    100020: Cylinder_5
+    100022: Cylinder_6
+    100024: Cylinder_7
+    100026: eyes
+    100028: Glasses
+    100030: hair
+    100032: hat
+    100034: hat_2
+    100036: hat_3
+    100038: head
+    100040: head_2
+    100042: hip
+    100044: Joint_2
+    100046: L_Elbow
+    100048: L_foot
+    100050: L_hand
+    100052: L_knee
+    100054: L_Leg
+    100056: L_Shoulder
+    100058: L_toe
+    100060: legs
+    100062: Null
+    100064: Null_1
+    100066: placegolders
+    100068: R_Elbow
+    100070: R_foot
+    100072: R_hand
+    100074: R_knee
+    100076: R_Leg
+    100078: R_Shoudler
+    100080: R_toe
+    100082: root
+    100084: Shoulder_bone
+    100086: skirt
+    100088: Sphere
+    100090: Sphere_1
+    100092: Sphere_2
+    100094: Subdivision_Surface_1
+    100096: Subdivision_Surface_3
+    100098: Subdivision_Surface_3_2
+    100100: Torus
+    100102: Torus_2
+    100104: Torus_2_2
+    400000: arms
+    400002: Background
+    400004: body
+    400006: //RootNode
+    400008: character_1
+    400010: Cylinder
+    400012: Cylinder_2
+    400014: Cylinder_3
+    400016: Cylinder_3_2
+    400018: Cylinder_4
+    400020: Cylinder_5
+    400022: Cylinder_6
+    400024: Cylinder_7
+    400026: eyes
+    400028: Glasses
+    400030: hair
+    400032: hat
+    400034: hat_2
+    400036: hat_3
+    400038: head
+    400040: head_2
+    400042: hip
+    400044: Joint_2
+    400046: L_Elbow
+    400048: L_foot
+    400050: L_hand
+    400052: L_knee
+    400054: L_Leg
+    400056: L_Shoulder
+    400058: L_toe
+    400060: legs
+    400062: Null
+    400064: Null_1
+    400066: placegolders
+    400068: R_Elbow
+    400070: R_foot
+    400072: R_hand
+    400074: R_knee
+    400076: R_Leg
+    400078: R_Shoudler
+    400080: R_toe
+    400082: root
+    400084: Shoulder_bone
+    400086: skirt
+    400088: Sphere
+    400090: Sphere_1
+    400092: Sphere_2
+    400094: Subdivision_Surface_1
+    400096: Subdivision_Surface_3
+    400098: Subdivision_Surface_3_2
+    400100: Torus
+    400102: Torus_2
+    400104: Torus_2_2
+    2300000: Cylinder
+    2300002: Cylinder_2
+    2300004: Cylinder_3
+    2300006: Cylinder_3_2
+    2300008: Cylinder_4
+    2300010: Cylinder_5
+    2300012: Cylinder_6
+    2300014: Cylinder_7
+    2300016: eyes
+    2300018: Glasses
+    2300020: hair
+    2300022: hat
+    2300024: hat_2
+    2300026: hat_3
+    2300028: head_2
+    2300030: skirt
+    2300032: Sphere
+    2300034: Sphere_1
+    2300036: Sphere_2
+    2300038: Subdivision_Surface_3
+    2300040: Subdivision_Surface_3_2
+    2300042: Torus
+    2300044: Torus_2
+    2300046: Torus_2_2
+    3300000: Cylinder
+    3300002: Cylinder_2
+    3300004: Cylinder_3
+    3300006: Cylinder_3_2
+    3300008: Cylinder_4
+    3300010: Cylinder_5
+    3300012: Cylinder_6
+    3300014: Cylinder_7
+    3300016: eyes
+    3300018: Glasses
+    3300020: hair
+    3300022: hat
+    3300024: hat_2
+    3300026: hat_3
+    3300028: head_2
+    3300030: skirt
+    3300032: Sphere
+    3300034: Sphere_1
+    3300036: Sphere_2
+    3300038: Subdivision_Surface_3
+    3300040: Subdivision_Surface_3_2
+    3300042: Torus
+    3300044: Torus_2
+    3300046: Torus_2_2
+    4300000: skirt
+    4300002: arms
+    4300004: body
+    4300006: hair
+    4300008: eyes
+    4300010: head_2
+    4300012: Glasses
+    4300014: legs
+    4300016: hat
+    4300018: Torus_2
+    4300020: Cylinder_3
+    4300022: Cylinder
+    4300024: Subdivision_Surface_3
+    4300026: Sphere
+    4300028: hat_2
+    4300030: Torus_2_2
+    4300032: Cylinder_3_2
+    4300034: Cylinder_2
+    4300036: Subdivision_Surface_3_2
+    4300038: Sphere_2
+    4300040: hat_3
+    4300042: Torus
+    4300044: Cylinder_7
+    4300046: Cylinder_6
+    4300048: Cylinder_5
+    4300050: Cylinder_4
+    4300052: Sphere_1
+    9500000: //RootNode
+    13700000: arms
+    13700002: body
+    13700004: legs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: a6638ad35035766468377bd863f6e79e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: 32fb0ff3dd3cd2d40a5acc7c874d12c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.2
+    second: {fileID: 2100000, guid: c94691b5af751654b89d3553d3d8a234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.3
+    second: {fileID: 2100000, guid: 35bbaec05e72a8342a50d210427217dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.4
+    second: {fileID: 2100000, guid: d6b5001a789c83f40966c7ab3a86e833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: e02fa54383280114d8f01910c6eaa636, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
