@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class AnimateBlock : MonoBehaviour {
 
-    void OnCollisionEnter(Collision col)
+    private Animator _animation;
+    [SerializeField] private GameObject _animationObject;
+
+
+    void Start()
     {
-        if (col.gameObject.name == "Player")
+        _animation = _animationObject.GetComponent<Animator>();
+    }
+    void Update()
+    {
+        _animation.Play("CINEMA_4D_Main");
+    }
+    void OnColliderEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Player")
         {
-            
+            //_animation.Play("CINEMA_4D_Main");
+            Debug.Log("Moan");
         }
     }
 }
