@@ -121,18 +121,18 @@ public class BlockMovement : MonoBehaviour {
                 _direction = 0;
                 if (_mouseDelta.y < 0)
                 {
-                    if (gameObject.transform.parent.position.z <= firstPoint.transform.position.z - 1.51f)
+                    if (gameObject.transform.parent.position.z <= firstPoint.transform.position.z - 1.45f)
                         _direction = Mathf.Floor(_mouseDelta.normalized.y);
                 }
                 else
                 {
-                    if (gameObject.transform.parent.position.z >= secondPoint.transform.position.z + 1.51f)
+                    if (gameObject.transform.parent.position.z >= secondPoint.transform.position.z + 1.45f)
                         _direction = Mathf.Ceil(_mouseDelta.normalized.y);
 
                 }
-                if (gameObject.transform.parent.position.z > firstPoint.transform.position.z - 1.5f)
+                if (gameObject.transform.parent.position.z > firstPoint.transform.position.z - 1.44f)
                     gameObject.transform.parent.position = new Vector3(gameObject.transform.parent.position.x, gameObject.transform.parent.position.y, firstPoint.transform.position.z - 1.5f);
-                if (gameObject.transform.parent.position.z < secondPoint.transform.position.z + 1.5f)
+                if (gameObject.transform.parent.position.z < secondPoint.transform.position.z + 1.44f)
                     gameObject.transform.parent.position = new Vector3(gameObject.transform.parent.position.x, gameObject.transform.parent.position.y, secondPoint.transform.position.z + 1.5f);
 
                 //moves the parent in a direction

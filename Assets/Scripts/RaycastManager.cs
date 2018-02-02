@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RaycastManager : MonoBehaviour
 {
+    public static RaycastHit hit;
 
     public static GameObject GetRaycastHit()
     {
-        RaycastHit hit;
+        //RaycastHit hit;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
