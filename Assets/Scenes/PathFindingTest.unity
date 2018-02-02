@@ -1196,6 +1196,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: de305fb3a32e2624eb252822a3dfd4d5, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de305fb3a32e2624eb252822a3dfd4d5, type: 3}
   m_IsPrefabParent: 0
@@ -1424,6 +1428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _debug: 0
   _speed: 2
+  _rotationSpeed: 150
 --- !u!1 &804882219
 GameObject:
   m_ObjectHideFlags: 0
