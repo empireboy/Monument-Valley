@@ -136,7 +136,7 @@ public class BlockMovement : MonoBehaviour {
                     gameObject.transform.parent.position = new Vector3(gameObject.transform.parent.position.x, gameObject.transform.parent.position.y, secondPoint.transform.position.z + 1.5f);
 
                 //moves the parent in a direction
-                gameObject.transform.parent.Translate(new Vector3(0, 0, -_direction) * speed * Time.deltaTime);
+                gameObject.transform.parent.Translate(new Vector3(0, 0, _direction) * speed * Time.deltaTime);
 
                 _lastPos = Input.mousePosition; //last position of the mouse for speed
                 speed = Mathf.Abs(_delta * Time.deltaTime * keerSpeed);
